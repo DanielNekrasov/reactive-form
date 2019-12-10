@@ -1,12 +1,9 @@
 let data = {
-    quantity: 5,
-    price: 10
-}
+    prop1: "Hello",
+    prop2: "World"
+};
 
 let target = null;
-
-let total = 0;
-let sale = 0;
 
 // Dependency class
 function Dep() {
@@ -17,24 +14,23 @@ Dep.prototype.depend = function () {
     if (target && !this.subscribers.includes(target)) {
         this.subscribers.push(target);
     }
-}
+};
 
 Dep.prototype.notify = function () {
-    this.subscribers.forEach(sub => sub())
-}
-
+    this.subscribers.forEach(sub => sub());
+};
 
 // Watcher function
 function watcher(myTargetFn) {
-    target = myTargetFn
+    target = myTargetFn;
     target();
     target = null;
 }
 
-
 Object.keys(data).forEach(key => {
-    let currentValue = data[key]
+    let currentValue = data[key];
     const dep = new Dep();
+    console.log(dep);
 
     Object.defineProperty(data, key, {
         get: function () {
@@ -46,16 +42,20 @@ Object.keys(data).forEach(key => {
             dep.notify();
         }
     });
+});
 
+
+Object.keys(data).forEach(key => {
+    const el = document.querySelector(`#form input[name="data.${key}"]`);
+
+    if (el) {
+        watcher(() => {
+            el.value = data[key];
+        })
+
+        el.addEventListener('change', (event) => {
+            data[key] = event.currentTarget.value
+        })
+    }
 })
 
-watcher(() => {
-    total = data.price * data.quantity;
-})
-watcher(() => {
-    sale = data.price - data.price * 0.10;
-})
-
-console.log(sale);
-data.price = 100;
-console.log(sale);
