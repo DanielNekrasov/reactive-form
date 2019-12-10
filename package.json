@@ -1,0 +1,23 @@
+{
+  "name": "my-reactiveness",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "parcel index.html",
+    "build": "parcel build index.html"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DanielNekrasov/my-reactiveness.git"
+  },
+  "author": "Daniel Nekrasov",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DanielNekrasov/my-reactiveness/issues"
+  },
+  "homepage": "https://github.com/DanielNekrasov/my-reactiveness#readme",
+  "devDependencies": {
+    "parcel-bundler": "^1.12.4"
+  }
+}
