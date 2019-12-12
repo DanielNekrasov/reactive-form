@@ -1,4 +1,4 @@
-import ReForm from './src/ReForm';
+import ReForm from './ReForm';
 
 new ReForm({
     el: '#form',

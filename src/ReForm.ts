@@ -15,7 +15,7 @@ export default function ReForm(props) {
                 inputElem.value = data[key];
             });
 
-            inputElem.addEventListener('keyup', (event) => {
+            inputElem.addEventListener('input', (event) => {
                 data[key] = event.currentTarget.value
             })
         }

@@ -1,4 +1,4 @@
-import Dep from './Dep.js';
+import Dep from './Dep';
 
 export default function watcher(myTargetFn) {
     Dep.target = myTargetFn;
