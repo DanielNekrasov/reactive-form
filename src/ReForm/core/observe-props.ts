@@ -1,4 +1,4 @@
-import Dep from './Dep';
+import Dep from './dep';
 
 export default function observeProps(object) {
     Object.keys(object).forEach(key => {

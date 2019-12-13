@@ -1,7 +1,7 @@
 import observeProps from './core/observe-props';
 import watcher from './core/watcher';
 
-export default function ReForm(props) {
+export default function Index(props) {
     const { data, el } = props;
 
     observeProps(data);

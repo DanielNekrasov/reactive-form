@@ -1,6 +1,6 @@
-import ReForm from './ReForm';
+import Index from './ReForm/index';
 
-new ReForm({
+new Index({
     el: '#form',
     data: {
         prop1: "Hello",

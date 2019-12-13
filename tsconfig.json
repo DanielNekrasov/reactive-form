@@ -6,7 +6,7 @@
     "noImplicitReturns": true,
     "esModuleInterop": true,
     "noUnusedLocals": true,
-    "noImplicitAny": true,
+    "noImplicitAny": false,
     "declarationDir": "dist/types",
     "declaration": true,
     "target": "es2015",
