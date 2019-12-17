@@ -1,29 +1,45 @@
 import observeProps from './core/observe-props';
 import watcher from './core/watcher';
 
-export default function Index(props) {
+type config  = {
+    el: string
+    data: object
+}
+
+export default function ReForm(props: config) {
     const { data, el } = props;
+    const form = document.querySelector(el);
 
     observeProps(data);
 
-    Object.keys(data).forEach(key => {
-        const inputElements = document.querySelectorAll(`${el} input[x-model="${key}"]`);
-        const textElements = document.querySelectorAll(`${el} [x-text="${key}"]`);
+    if(form){
+        Object.keys(data).forEach(prop => {
+            const inputElements = form.querySelectorAll(`input[name="${prop}"]`);
 
-        for (const inputElem of inputElements) {
-            watcher(() => {
-                inputElem.value = data[key];
-            });
+            for (const inputElem of inputElements) {
+                if (inputElem.type === 'checkbox') {
+                    watcher(() => {
+                        inputElem.checked = data[prop];
+                    });
+                } else {
+                    watcher(() => {
+                        inputElem.value = data[prop];
+                    });
+                }
+            }
+        });
 
-            inputElem.addEventListener('input', (event) => {
-                data[key] = event.currentTarget.value
-            })
-        }
+        form.addEventListener('input', (event) => {
+            const inputElem = event.target;
+            if (inputElem){
+                const prop = inputElem.name;
 
-        for (const textElem of textElements) {
-            watcher(() => {
-                textElem.innerHTML = data[key];
-            })
-        }
-    })
+                if(inputElem.type === 'checkbox') {
+                    data[prop] = inputElem.checked;
+                } else {
+                    data[prop] = inputElem.value;
+                }
+            }
+        });
+    }
 }

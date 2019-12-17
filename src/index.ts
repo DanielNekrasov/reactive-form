@@ -1,9 +1,10 @@
-import Index from './ReForm/index';
+import ReForm from './ReForm/index';
 
-new Index({
+const app = new ReForm({
     el: '#form',
     data: {
         prop1: "Hello",
-        prop2: "World"
+        prop2: "World",
+        prop3: true
     }
 });
