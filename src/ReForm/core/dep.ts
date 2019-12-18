@@ -1,18 +1,21 @@
 // Dependency class
 export default class Dep {
-  constructor() {
-    this.subscribers = []
-  }
+    private subscribers: { (): void; }[];
+    public static target: { (): void } | null;
 
-  depend() {
-    if (Dep.target && !this.subscribers.includes(Dep.target)) {
-      this.subscribers.push(Dep.target);
+    constructor() {
+        this.subscribers = []
     }
-  }
 
-  notify() {
-    this.subscribers.forEach(sub => sub());
-  }
+    depend() {
+        if (Dep.target && !this.subscribers.includes(Dep.target)) {
+            this.subscribers.push(Dep.target);
+        }
+    }
+
+    notify() {
+        this.subscribers.forEach(sub => sub());
+    }
 }
 
 Dep.target = null;

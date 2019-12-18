@@ -9,8 +9,8 @@
     "noImplicitAny": false,
     "declarationDir": "dist/types",
     "declaration": true,
-    "target": "es2015",
-    "module": "es2015",
+    "target": "es2016",
+    "module": "es6",
     "strict": true
   },
   "include": [
