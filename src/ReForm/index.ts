@@ -3,13 +3,20 @@ import {addInputWatchers} from './dom/inputs';
 import {addSelectWatchers} from './dom/select';
 import {onFormChangeHandler} from './dom/actions';
 
-type config = {
+type Prop = {
+    value: any,
+    required: boolean
+};
+
+type Config = {
     el: string
-    data: object,
-    computed: {[key: string]: () => any}
+    data: {
+        [key: string]: Prop
+    },
+    computed: { [key: string]: () => any }
 }
 
-function ReForm(props: config) {
+function ReForm(props: Config) {
     const {data, el} = props;
     const form = document.querySelector(el);
 

@@ -11,7 +11,7 @@ export function addSelectWatchers(props) {
 
         if(data.hasOwnProperty(prop)) {
             watcher(() => {
-                selectElem.value = data[prop];
+                selectElem.value = data[prop].value;
             });
         }
     }

@@ -7,9 +7,15 @@ export function onFormChangeHandler(props) {
             prop = inputElem.name;
 
         if (inputElem.type === 'checkbox') {
-            data[prop] = inputElem.checked;
+            data[prop] = {
+                ...data[prop],
+                value: inputElem.checked
+            };
         } else {
-            data[prop] = inputElem.value;
+            data[prop] = {
+                ...data[prop],
+                value: inputElem.value
+            };
         }
     });
 }

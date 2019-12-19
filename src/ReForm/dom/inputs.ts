@@ -13,17 +13,20 @@ export function addInputWatchers(props) {
             switch (inputElem.type) {
                 case "checkbox":
                     watcher(() => {
-                        inputElem.checked = data[prop];
+                        inputElem.checked = data[prop].value;
+                        inputElem.required = data[prop].required;
                     });
                     break;
                 case "radio":
                     watcher(() => {
-                        inputElem.checked = data[prop] === inputElem.value;
+                        inputElem.checked = data[prop].value === inputElem.value;
+                        inputElem.required = data[prop].required;
                     });
                     break;
                 default:
                     watcher(() => {
-                        inputElem.value = data[prop];
+                        inputElem.value = data[prop].value;
+                        inputElem.required = data[prop].required;
                     });
                     break;
             }
