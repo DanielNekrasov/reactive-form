@@ -9,47 +9,49 @@
 
   <body>
     <form action="" id="form">
-      <label>
-        <input type="text" name="prop1" />
-      </label>
-      <label>
-        <input type="text" name="prop2" />
-      </label>
+      <div>
+        <h2>Props:</h2>
+        <div>
+          <label for="prop1"></label>
+          <input type="text" name="prop1" id="prop1"/>
 
+          <label for="prop2"></label>
+          <input type="text" name="prop2" id="prop2"/>
+        </div>
+        <br>
+        <div>
+          <label for="prop3">Is Required</label>
+          <input type="checkbox" name="prop3" id="prop3">
+        </div>
+        <br>
+        <div>
+          <label>
+            <input type="radio" name="prop4" value="one">
+            One
+          </label>
+          <label>
+            <input type="radio" name="prop4" value="two">
+            Two
+          </label>
+        </div>
+        <br>
+        <div>
+          <label for="select">Choose:</label>
+          <select name="prop-select" id="select">
+            <option value="react">React</option>
+            <option value="vue">Vue</option>
+            <option value="angular">Angular</option>
+          </select>
+        </div>
+      </div>
+      <div>
+        <h2>Computed:</h2>
+        <label>
+          <input type="text" name="prop5" />
+        </label>
+      </div>
       <br>
-
-      <label>
-        <input type="text" name="prop5" />
-      </label>
-
-      <!-- Checkbox-->
-      <label>
-        <input type="checkbox" name="prop3">
-        Is Required
-      </label>
-
-      <br>
-      <!-- Radio-->
-      <label>
-        <input type="radio" name="prop4" value="one">
-        One
-      </label>
-      <label>
-        <input type="radio" name="prop4" value="two">
-        Two
-      </label>
-      <label>
-        <input type="radio" name="prop4" value="three">
-        Three
-      </label>
-
-      <br>
-      <label for="select">Choose:</label>
-      <select name="prop-select" id="select">
-        <option value="react">React</option>
-        <option value="vue">Vue</option>
-        <option value="angular">Angular</option>
-      </select>
+      <button type="submit">Submit</button>
     </form>
 
     <script src="./dist/bundle.js"></script>
