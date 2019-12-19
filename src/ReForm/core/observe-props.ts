@@ -7,7 +7,6 @@ export default function observeProps(object) {
 
         Object.defineProperty(object, key, {
             get: function () {
-                // console.log(currentValue);
                 dep.depend();
                 return currentValue;
             },

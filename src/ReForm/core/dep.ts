@@ -1,6 +1,6 @@
 // Dependency class
 export default class Dep {
-    private subscribers: { (): void; }[];
+    private subscribers: { (): void }[];
     public static target: { (): void } | null;
 
     constructor() {

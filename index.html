@@ -13,9 +13,6 @@
         <input type="text" name="prop1" />
       </label>
       <label>
-        <input type="text" name="prop1" />
-      </label>
-      <label>
         <input type="text" name="prop2" />
       </label>
 
@@ -28,9 +25,10 @@
       <!-- Checkbox-->
       <label>
         <input type="checkbox" name="prop3">
-        Check me
+        Is Required
       </label>
 
+      <br>
       <!-- Radio-->
       <label>
         <input type="radio" name="prop4" value="one">
@@ -45,9 +43,13 @@
         Three
       </label>
 
-      <div id="output">
-
-      </div>
+      <br>
+      <label for="select">Choose:</label>
+      <select name="prop-select" id="select">
+        <option value="react">React</option>
+        <option value="vue">Vue</option>
+        <option value="angular">Angular</option>
+      </select>
     </form>
 
     <script src="./dist/bundle.js"></script>
